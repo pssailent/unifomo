@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+/* @font-face {
+    font-family: "Fontspring-Demo-proximanovaexcn-bold";
+    src: url(Demo_Fonts/Fontspring-Demo-proximanovaexcn-bold.otf) format('opentype');
+    font-weight: bold;
+} */
+@font-face {
+    font-family: "Fontspring-Demo-proximanova-black";
+    src: url(Demo_Fonts/ontspring-Demo-proximanova-black.otf) format('opentype');
+}
+@font-face {
+    font-family: "Fontspring-Demo-proximanova-extrabold";
+    src: url(Demo_Fonts/Fontspring-Demo-proximanova-extrabold.otf) format('opentype');
+}
+@font-face {
+    font-family:"Fontspring-DEMO-proximanova-regularit" ;
+    src: url(Demo_Fonts/Fontspring-DEMO-proximanova-regularit.otf) format('opentype');
+    font-weight: normal;
+}
+    :root {
+        --font-family-1: 'Poppins', Arial, sans-serif;
+        --font-family-2: 'Anton SC', 'Impact', sans-serif;
+        --font-family-3:  'Fontspring-Demo-proximanovaexcn-bold', sans-serif;
+        --font-family-4: 'Fontspring-Demo-proximanova-black', sans-serif;
+        --font-family-5:'Fontspring-Demo-proximanova-extrabold','Poppins';
+        --font-family-6:'Fontspring-DEMO-proximanova-regularit',sans-serif;
+        --color-1: #0000;
+        --text-color-1: #fff;
+        --color-2: #0E3386;
+        --color-3: #0071c5;
+        --color-4: #1CAC78;
+        --color-5: #009F6B;
+    }
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body {
+        background: linear-gradient(to right, #000000, #000000,#0d0d0d); 
+    }
+
+    /* Page container grows to take available space */
+    .page-container {
+        flex: 1; /* Push the footer down */
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px ;
+        position: relative;
+    }
+
+    .logo img {
+        height: 50px;
+        width: 50px;
+
+    }
+    .logo img:hover{
+        cursor: pointer;
+    }
+    .nav-links {
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+
+    .nav-links a {
+        font-weight: 500;
+        font-family: 'Poppins';
+        text-decoration: none;
+        color: var(--text-color-1);
+
+    }
+    .nav-links a:hover{
+        text-decoration: underline;
+    }
+    .main-body {
+        margin-top: 50px;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+    .content .t1,.t2 {        
+        color: var(--text-color-1);
+        /* letter-spacing: 4px; */
+        
+    }
+    .content .t1 {
+        font-family: var(--font-family-3);
+        font-size: 35px;
+        font-weight: bold;
+    }
+    .content .t2 {
+        font-family: var(--font-family-6);
+        font-weight: 100;
+        font-size: 20px;
+    }
+
+    .content .t3 {
+        letter-spacing: 3px;
+        font-size: 80px;
+        
+        font-family: var(--font-family-4);
+        color: var(--text-color-1);
+    }
+    .auto-text {
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    .text {
+        font-size: 15px;
+        font-weight: 100;
+        letter-spacing: 2px;
+        font-family: var(--font-family-3);
+        color: var(--text-color-1);
+        border-right: 3px solid;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 3s steps(29) alternate infinite;
+                    
+    }
+    .content .unifomo {
+        display: flex;
+        flex-direction: column;
+        justify-items: start;
+        align-items: center;
+        gap: 3px;
+        margin-top: 18px;
+    }
+    @keyframes typing {
+        0% {
+            width: 0%;
+        }
+        90% {
+            width: 100%;
+        }
+        100% {
+            width: 100%; /* Hold the text briefly */
+        }
+    }
+    @keyframes line {
+        50%{
+            color: transparent;
+        }
+    }
+
+    .search-container {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Space between the input and button */
+    }
+
+    .search-box {
+        padding: 10px 20px;
+        border-radius: 4px;
+        border: 1px solid white;
+        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+        backdrop-filter: blur(10px); /* Applies the blur effect */
+        color: white;
+        font-size: 14px;
+        width: 300px; /* Adjust width as needed */
+    }
+
+    .search-box::placeholder {
+        color: #cfcfcf;
+    }
+
+    .search-box:focus {
+        outline: none;
+        border-color: #fff;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .notify-button {
+        padding: 10px 10px;
+        border-radius: 4px;
+        border: none;
+        background-color: #787878;
+        color: white;
+        font-size: 18px;
+        font-weight: 400;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .notify-button:hover {
+        background-color: #0056b3;
+    }
+
+    .notify-button:active {
+        transform: scale(0.95);
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-links a {
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+        color: #8d8d8d;
+    }
+
+    /* Footer Styling */
+
+    footer {
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .fsocial-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    .fsocial-links a {
+        color: white;
+        font-size: 24px;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    .fsocial-links a:hover {
+        color: #1da1f2; /* Light blue for hover effect */
+    }
+    footer p {
+        font-family: var(--font-family-1);
+    }
+
+
+    /* Responsive Design */
+
+    @media (max-width: 920px) {
+        .content .t1, .t2, .t3{
+            text-align: center;
+        }
+        .search-container{
+            display: flex;
+            align-items: center;
+            
+        }
+    }
+
+
+    @media (max-width: 768px) {
+        body{
+            height: 100%;
+        }
+        .navbar {
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 15px;
+        }
+
+        .nav-links {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .main-body {
+            padding: 20px;
+        }
+        .search-container{
+            display: flex;
+            align-items: center;
+            
+        }
+        .search-box {
+            width: 100%;
+        }
+
+        .content .t1, .t2, .t3 {
+            align-items: center;
+        }
+
+        .content .t1 {
+            font-size: 18px;
+        }
+    
+
+        .notify-button {
+            width: 100%;
+            font-size: 16px;
+        }
+    }
+
+
+    @media (min-width: 481px) and (max-width: 768px) {
+        .navbar {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+    
+        .nav-links {
+            flex-direction: row;
+            gap: 15px;
+        }
+    
+        .logo img {
+            height: 45px;
+        }
+        .content {
+            justify-content: center;
+            align-items: center;
+        }
+        .content .t1, .t2, .t3 {
+            margin-left: 10px;
+            align-items: center;
+        }
+    
+        .content .t1 {
+            font-size: 23px;
+        }
+    
+        .content .t2 {
+            
+            font-size: 19px;
+        }
+    
+        .content .t3 {
+            font-size: 45px;
+        }
+    
+        .search-box {
+            width: 80%;
+            font-size: 16px;
+        }
+    
+        .notify-button {
+            width: auto;
+            font-size: 16px;
+        }
+    
+        footer {
+            padding: 15px;
+            font-size: 14px;
+        }
+    
+        .fsocial-links a {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 540px) {
+        .content .t1, .t2, .t3 {
+            margin-left: 20px;
+            text-align: center;
+        }
+        .content .t2 {
+            font-size: 18px;
+        }
+        
+    }
+
+    @media (max-width: 481px) {
+        .content {
+            justify-content: center;
+            align-items: center;
+        }
+        .content .t1 {
+            text-align: center;
+            font-size: 19px;
+        }
+    
+        .content .t2 {
+            text-align: center;
+            font-size: 14px;
+        }
+    
+        .content .t3 {
+            font-size: 40px;
+        }
+        .auto-text .text {
+            align-items: center;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .search-box {
+            width: 60%;
+            font-size: 16px;
+        }
+    
+        .notify-button {
+            width: auto;
+            font-size: 12px;
+        }
+    
+        footer {
+            padding: 15px;
+            font-size: 14px;
+        }
+    
+        .fsocial-links a {
+            font-size: 20px;
+        }
+    
+    }
+
+
+/* Hide nav links on small screens */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* Show the hamburger icon on mobile */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+}
+
+/* Show nav links and hamburger icon on mobile */
+@media (max-width: 768px) {
+    
+    /* Hide navigation links on mobile */
+    .nav-links {
+        display: none;
+    }
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column; /* Stack the links vertically */
+        position: absolute;
+        width: 100%;
+        top: 60px; /* Position below the navbar */
+        left: 50%;
+        transform: translateX(-50%);
+        backdrop-filter: blur(15px); /* Apply the blur effect */
+        -webkit-backdrop-filter: blur(10px); /* For Safari */
+        padding: 10px 0;
+        border-radius: 5px;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+        padding: 10px;
+        color: white;
+        /* text-decoration: none; */
+        text-align: center;
+    }
+
+    .nav-links a:hover {
+        text-decoration: underline;
+    }
+}

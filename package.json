@@ -1,0 +1,19 @@
+{
+  "name": "unifomo-backend",
+  "version": "1.0.0",
+  "description": "Backend for Unifomo homepage email collection",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "nodemailer": "^6.9.16"
+  },
+  "engines": {
+    "node": ">= 14.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
